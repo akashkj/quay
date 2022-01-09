@@ -53,6 +53,7 @@ RUN set -ex\
 
 # Build-python installs the requirements for the python code.
 FROM build AS build-python
+RUN yum install -y libffi libffi-devel
 COPY requirements.txt .
 # Note that it installs into PYTHONUSERBASE because of the '--user'
 # flag.
